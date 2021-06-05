@@ -1,0 +1,303 @@
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<style>
+/* Base for label styling */
+	[type="checkbox"]:not(:checked),
+	[type="checkbox"]:checked {
+		position: absolute;
+		left: 0;
+		opacity: 0.01;
+	}
+	[type="checkbox"]:not(:checked) + label,
+	[type="checkbox"]:checked + label {
+		position: relative;
+		padding-left: 2.3em;
+		font-size: 1.05em;
+		line-height: 1.7;
+		cursor: pointer;
+	}
+
+	/* checkbox aspect */
+	[type="checkbox"]:not(:checked) + label:before,
+	[type="checkbox"]:checked + label:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 1.4em;
+		height: 1.4em;
+		border: 1px solid #aaa;
+		background: #FFF;
+		border-radius: .2em;
+		box-shadow: inset 0 1px 3px rgba(0,0,0, .1), 0 0 0 rgba(203, 34, 237, .2);
+		-webkit-transition: all .275s;
+				transition: all .275s;
+	}
+
+	/* checked mark aspect */
+	[type="checkbox"]:not(:checked) + label:after,
+	[type="checkbox"]:checked + label:after {
+		content: 'X';
+		position: absolute;
+		top: .525em;
+		left: .18em;
+		font-size: 1.375em;
+		color: #CB22ED;
+		line-height: 0;
+		-webkit-transition: all .2s;
+				transition: all .2s;
+	}
+
+	/* checked mark aspect changes */
+	[type="checkbox"]:not(:checked) + label:after {
+		opacity: 0;
+		-webkit-transform: scale(0) rotate(45deg);
+				transform: scale(0) rotate(45deg);
+	}
+
+	[type="checkbox"]:checked + label:after {
+		opacity: 1;
+		-webkit-transform: scale(1) rotate(0);
+				transform: scale(1) rotate(0);
+	}
+
+	/* Disabled checkbox */
+	[type="checkbox"]:disabled:not(:checked) + label:before,
+	[type="checkbox"]:disabled:checked + label:before {
+		box-shadow: none;
+		border-color: #bbb;
+		background-color: #e9e9e9;
+	}
+
+	[type="checkbox"]:disabled:checked + label:after {
+		color: #777;
+	}
+
+	[type="checkbox"]:disabled + label {
+		color: #aaa;
+	}
+
+	/* Accessibility */
+	[type="checkbox"]:checked:focus + label:before,
+	[type="checkbox"]:not(:checked):focus + label:before {
+		box-shadow: inset 0 1px 3px rgba(0,0,0, .1), 0 0 0 6px rgba(203, 34, 237, .2);
+	}
+
+
+
+
+/*
+ * Useless styles, just for demo design
+ */
+body {
+  font-family: "Open Sans", "Segoe WP", "Segoe UI", Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #34495E;
+    background: #FCFDFD;
+}
+
+a[href^="https://www.creativejuiz"] {
+  color: #34495E;
+  text-decoration: underline;
+}
+
+h1 {
+  margin-top: 1em;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 2em;
+  color: #CB22ED;
+  font-weight: normal;
+}
+
+form {
+  width: 120px;
+  margin: 0 auto 55px;
+  text-align: left;
+}
+
+div p:first-child {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+p { 
+  color: #aaa;
+}
+
+p a {
+  color: inherit;
+}
+
+p + p {
+  margin-top: 3em;
+}
+
+form p {
+  margin: 15px 0;
+  color: #34495E;
+}
+
+a[href^="https://twitter.com"] {
+  color: #1da1f2;
+}
+
+.btn.btn {
+  display: inline-block;
+  padding: 8px 24px;
+  text-decoration: none;
+  border-radius: 40px;
+  background: #34495E;
+  color: #F2F2F2;
+  transition: all .4s;
+}
+
+.btn.btn:hover,
+.btn.btn:focus {
+  background: #000;
+}
+.hv{
+cursor:pointer
+}
+.hv:hover{
+	color:red;
+}
+button:hover
+{
+	cursor:hand;
+}
+.im{
+width:100%;
+height:90vh;
+
+.bl{
+background: rgb(86,176,245);
+background: linear-gradient(153deg, rgba(86,176,245,1) 0%, rgba(86,176,245,1) 100%);
+ font-family: Roboto,Verdana, Geneva, sans-serif;
+}
+object-fit:cover;
+}
+html{
+background: rgb(0,188,255);
+background: linear-gradient(153deg, rgba(0,188,255,1) 0%, rgba(255,235,0,1) 100%);
+ font-family: Roboto,Verdana, Geneva, sans-serif;
+}
+.roboto{
+ font-family: Roboto,Verdana, Geneva, sans-serif;
+}
+input{
+font-size:70%;
+padding:10px;	
+margin:10px;
+width:80%
+}
+img.arrow{
+	margin:20px;
+	width:80px;
+	animation: mover 1s infinite alternate;
+	
+}
+@keyframes mover{
+	0%{transform: rotate(20deg);}
+	100%{transform: rotate(-20deg);}
+}
+.top a
+,.top a:active
+,.top a:hover
+,.top a:link
+,.top a:visited
+{
+	color:rgb(13, 65, 84); font-weight:bold;
+	font-size:140%;
+	text-decoration:none;
+	padding-left:20px;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Home</title>
+</head>
+<body style="padding:20px">
+
+<div style="background: white;padding:20px;border-radius:20px">
+<table class="top" width="100%"><tr><td>
+<img src="logo.png">
+</td>
+<td style="width:100%"> 
+<a href="index.html">
+Home
+</a>
+<a href="organization-main.html">
+Connect
+</a>
+<a href="index.html">
+Explore
+</a>
+<a href="index.html" >
+Messages
+</a>
+</td>
+<td align="right" style="white-space: nowrap;">
+<a href="index.html" >
+Login
+</a>
+<a href="Signup.html">
+Sign Up
+</a>
+
+</td>
+<tr></table>
+
+
+<div style=" padding:50px;">
+<h1>What subject are you most passionate about in school?</h1>
+
+<div style="color:gray;text-align:left;padding-left:30%">
+
+  <p><h1>
+    <input type="checkbox" id="test1" />
+    <label for="test1">History</label>
+  </h1></p>
+
+  <p><h1>
+    <input type="checkbox" id="test2" />
+    <label for="test2">Math</label>
+  </h1></p>
+  <p><h1>
+    <input type="checkbox" id="test3" />
+    <label for="test3">English</label>
+  </h1></p>
+  <p><h1>
+    <input type="checkbox" id="test4" />
+    <label for="test4">Science</label>
+  </h1></p>
+  <p><h1>
+    <input type="checkbox" id="test5" />
+    <label for="test5">Health</label>
+  </h1></p>
+  <p><h1>
+    <input type="checkbox" id="test6" />
+    <label for="test6">Art</label>
+  </h1></p>
+</div>
+</div>
+</h1>
+
+</div>
+					<div style="width:90%;text-align:right;">
+
+					<a href="student-main.html">
+					<button style="width:140px;border-radius:20px;background:rgb(0,188,255);color:BLACK;padding:20px;border:0px;font-size:150% "  type="button">
+						Next
+					</button>
+					</a>
+					</div>
+
+
+
+
+
+</body>
+</html>

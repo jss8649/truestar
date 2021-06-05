@@ -1,0 +1,245 @@
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<style>
+button:hover
+{
+	cursor:hand;
+}
+.im{
+width:100%;
+height:50vh;
+
+.bl{
+background: rgb(86,176,245);
+background: linear-gradient(153deg, rgba(86,176,245,1) 0%, rgba(86,176,245,1) 100%);
+ font-family: Roboto,Verdana, Geneva, sans-serif;
+ 
+}
+object-fit:cover;
+}
+html{
+background: rgb(0,188,255);
+background: linear-gradient(153deg, rgba(0,188,255,1) 0%, rgba(255,235,0,1) 100%);
+ font-family: Roboto,Verdana, Geneva, sans-serif;
+ 
+}
+.roboto{
+ font-family: Roboto,Verdana, Geneva, sans-serif;
+}
+input{
+font-size:70%;
+padding:10px;	
+margin:10px;
+width:80%
+}
+img.arrow{
+	margin:20px;
+	width:80px;
+	animation: mover 1s infinite alternate;
+	
+}
+@keyframes mover{
+	0%{transform: rotate(20deg);}
+	100%{transform: rotate(-20deg);}
+}
+.top a
+,.top a:active
+,.top a:hover
+,.top a:link
+,.top a:visited
+{
+	color:rgb(13, 65, 84); font-weight:bold;
+	font-size:140%;
+	text-decoration:none;
+	padding-left:20px;
+}
+
+.card{
+background:#eee;
+border:1px solid #999;
+border-radius : 20px;
+padding;20px;
+margin:40px;
+}
+.gridtd{
+width:33%;
+}
+.gridimg{
+width:100%;
+height:400px;
+object-fit:cover;
+border-radius:30px;
+
+}
+.gridtitle{
+	color:Green;
+	font-size:200%;
+	padding:10px;
+	padding-left:20px;
+}
+.gridtitlemin{
+	
+	padding-bottom:10px;
+	padding-left:20px;
+	color:gray;
+}
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Nunito:300,400,700&amp;display=swap");
+:root {
+  --member-animation: all 0.35s ease-in-out;
+  --font-family-1: "Josefin Sans", sans-serif;
+  --font-family-2: Nunito, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* TIMELINE */
+#timeline-container {
+  background: #00112e;
+  background: linear-gradient(171deg, #00112e 0%, #1d1594 100%);
+  overflow: auto;
+  padding: 60px 0;
+}
+#timeline-container .inner-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#timeline-container .inner-container .heading {
+  text-align: center;
+  font-family: var(--font-family-1);
+  font-weight: 700;
+  font-size: 3rem;
+  color: white;
+  margin-top: 0;
+}
+
+.timeline {
+  margin: 0 auto;
+  position: relative;
+  left: 120px;
+  width: 80%;
+  max-width: 900px;
+  margin-top: 16px;
+  margin-left: 5%;
+}
+
+.timeline-item {
+  color: #ffffff;
+  font-family: var(--font-family-2);
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  border-left: 4px solid #fff;
+  border-bottom: 1px solid #ffffff;
+  position: relative;
+  list-style-type: none;
+  --item-width: calc(100%);
+}
+.timeline-item::after {
+  content: attr(data-date);
+  position: absolute;
+  right: calc(var(--item-width) + 40px);
+  top: 16px;
+  float: right;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.timeline-item::before {
+  content: "";
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  position: absolute;
+  left: -10px;
+  top: 21px;
+}
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .timeline {
+    margin: 0 auto;
+    position: relative;
+    left: 85px;
+  }
+  .timeline .timeline-item {
+    font-size: 1.1rem;
+  }
+  .timeline .timeline-item::after {
+    right: calc(var(--item-width) + 30px);
+  }
+}
+@media only screen and (max-width: 800px) {
+  .timeline-item {
+    padding: 1rem 1.5rem 1rem 0.5rem;
+  }
+  .timeline-item::after {
+    right: calc(var(--item-width) + 20px);
+  }
+}
+/* TIMELINE end */
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Home</title>
+</head>
+<body style="padding:20px">
+
+<div style="background: white;padding:20px;border-radius:20px">
+<table class="top" width="100%"><tr><td>
+<img src="logo.png">
+</td>
+<td style="width:100%"> 
+<a href="index.html">
+Home
+</a>
+<a href="organization-main.html">
+Services
+</a>
+<a href="index.html">
+About Us
+</a>
+<a href="index.html" >
+Contact
+</a>
+</td>
+<td align="right" style="white-space: nowrap;">
+<a href="index.html" >
+
+</a>
+<a href="index.html">
+Logout
+</a>
+
+</td>
+<tr></table>
+<br/>
+<br/>
+ 
+<div id="timeline-container">
+  <div class="inner-container">
+    <h2 class="heading">Curriculum </h2>
+    <ul class="timeline">
+      <li class="timeline-item" data-date="22 Jan 2020">Data Types, Variables: Primitive types;</li>
+      <li class="timeline-item" data-date="3 Feb 2020">Mentor Registration Closes</li>
+      <li class="timeline-item" data-date="14 Feb 2020">Operators and Expressions 01.</li>
+      <li class="timeline-item" data-date="17 Feb 2020">Operators and Expressions 01</li>
+      <li class="timeline-item" data-date="17-23 Feb 2020">Acceptance Mails Sent</li>
+      <li class="timeline-item" data-date="24-29 Feb 2020">Community Bonding</li>
+      <li class="timeline-item" data-date="1 Mar 2020">Using Loops</li>
+      <li class="timeline-item" data-date="31 May 2020">Data Structures 2</li>
+      <li class="timeline-item" data-date="15 Jun 2020">Results Out</li>
+    </ul>
+  </div>
+</div></div>
+</body>
+</html>

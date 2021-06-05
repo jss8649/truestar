@@ -1,0 +1,669 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --main-color: #1a535c;
+  --secondary-color: #4ecdc4;
+  --white-color: #f7fff7;
+  --main-accent-color: #ff6b6b;
+  --secondary-accent-color: #ffe66d;
+  --dark-color: #2D232E;
+}
+
+html,
+body{
+  font-family: 'Comfortaa', cursive;
+  background: var(--dark-color);
+  
+}
+
+span{
+  color: var(--main-color);
+}
+
+.container{
+  background: var(--white-color);
+  height: 100vh;
+}
+
+h3, h4{
+  color: var(--main-color)
+}
+
+h6{
+  color: var(--secondary-color);
+}
+
+.row:first-of-type{
+  opacity: 0.5;
+  background: transparent!important;
+}
+
+.row{
+  transition: all ease-out 0.3s;
+}
+
+.row:hover{
+  background: #EBFFEB;
+}
+
+.day-txt{
+  display: inline-block;
+  transition: all ease-out 0.3s;de
+}
+
+.row:hover .day-txt{
+  transform: translateX(5px);
+  text-shadow: 0 0 0;
+}
+
+.tp-start-/,
+.tp-end-time{
+  color: var(--main-color);
+  cursor: pointer;
+  display: inline-block;
+  transition: all ease-out 0.3s;
+}
+
+.tp-start-time:hover,
+.tp-end-time:hover{
+  transform: scale(1.2);
+  text-shadow: 0 0 0 var(--main-color);
+  
+}
+
+
+/* timePicker.css */
+#tp-modal .modal-footer{
+  border: none;
+}
+
+#tp-modal .modal-header{
+  border: none;
+}
+
+#tp-time-cont{
+  display: flex;
+  text-align: center;
+  background: white;
+  position: relative;
+  align-items: stretch;
+}
+
+#tp-colon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tp-time-cont button{
+  border: none;
+  background: transparent;
+  height: auto;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none!important;
+  transition: all ease-out 0.3s;
+}
+
+#tp-hour-cont,
+#tp-minutes-cont{
+  flex-grow: 1;
+}
+
+#tp-time-cont button:hover{
+  transform: scale(1.3);
+  color: var(--main-color);
+}
+
+.tp-value{
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+#tp-set-btn{
+  background: var(--main-color);
+  border-color: var(--main-color);
+}
+
+button:hover
+{
+	cursor:hand;
+}
+.im{
+width:100%;
+height:50vh;
+
+.bl{
+background: rgb(86,176,245);
+background: linear-gradient(153deg, rgba(86,176,245,1) 0%, rgba(86,176,245,1) 100%);
+ font-family: Roboto,Verdana, Geneva, sans-serif;
+ 
+}
+object-fit:cover;
+}
+html{
+background: rgb(0,188,255);
+background: linear-gradient(153deg, rgba(0,188,255,1) 0%, rgba(255,235,0,1) 100%);
+ font-family: Roboto,Verdana, Geneva, sans-serif;
+ 
+}
+.roboto{
+ font-family: Roboto,Verdana, Geneva, sans-serif;
+}
+input{
+font-size:70%;
+padding:10px;	
+margin:10px;
+width:80%
+}
+img.arrow{
+	margin:20px;
+	width:80px;
+	animation: mover 1s infinite alternate;
+	
+}
+@keyframes mover{
+	0%{transform: rotate(20deg);}
+	100%{transform: rotate(-20deg);}
+}
+.top a
+,.top a:active
+,.top a:hover
+,.top a:link
+,.top a:visited
+{
+	color:rgb(13, 65, 84); font-weight:bold;
+	font-size:140%;
+	text-decoration:none;
+	padding-left:20px;
+}
+
+.card{
+background:#eee;
+border:1px solid #999;
+border-radius : 20px;
+padding;20px;
+margin:40px;
+}
+.gridtd{
+width:33%;
+}
+.gridimg{
+width:100%;
+height:400px;
+object-fit:cover;
+border-radius:30px;
+
+}
+.gridtitle{
+	color:Green;
+	font-size:200%;
+	padding:10px;
+	padding-left:20px;
+}
+.gridtitlemin{
+	
+	padding-bottom:10px;
+	padding-left:20px;
+	color:gray;
+}
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Nunito:300,400,700&amp;display=swap");
+:root {
+  --member-animation: all 0.35s ease-in-out;
+  --font-family-1: "Josefin Sans", sans-serif;
+  --font-family-2: Nunito, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* TIMELINE */
+#timeline-container {
+  background: #00112e;
+  background: linear-gradient(171deg, #00112e 0%, #1d1594 100%);
+  overflow: auto;
+  padding: 60px 0;
+}
+#timeline-container .inner-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#timeline-container .inner-container .heading {
+  text-align: center;
+  font-family: var(--font-family-1);
+  font-weight: 700;
+  font-size: 3rem;
+  color: white;
+  margin-top: 0;
+}
+
+.timeline {
+  margin: 0 auto;
+  position: relative;
+  left: 120px;
+  width: 80%;
+  max-width: 900px;
+  margin-top: 16px;
+  margin-left: 5%;
+}
+
+.timeline-item {
+  color: #ffffff;
+  font-family: var(--font-family-2);
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  border-left: 4px solid #fff;
+  border-bottom: 1px solid #ffffff;
+  position: relative;
+  list-style-type: none;
+  --item-width: calc(100%);
+}
+.timeline-item::after {
+  content: attr(data-date);
+  position: absolute;
+  right: calc(var(--item-width) + 40px);
+  top: 16px;
+  float: right;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.timeline-item::before {
+  content: "";
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  position: absolute;
+  left: -10px;
+  top: 21px;
+}
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .timeline {
+    margin: 0 auto;
+    position: relative;
+    left: 85px;
+  }
+  .timeline .timeline-item {
+    font-size: 1.1rem;
+  }
+  .timeline .timeline-item::after {
+    right: calc(var(--item-width) + 30px);
+  }
+}
+@media only screen and (max-width: 800px) {
+  .timeline-item {
+    padding: 1rem 1.5rem 1rem 0.5rem;
+  }
+  .timeline-item::after {
+    right: calc(var(--item-width) + 20px);
+  }
+}
+/* TIMELINE end */
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Home</title>
+</head>
+<body style="padding:20px">
+
+<div style="background: white;padding:20px;border-radius:20px">
+<table class="top" width="100%"><tr><td>
+<img src="logo.png">
+</td>
+<td style="width:100%"> 
+<a href="index.html">
+Home
+</a>
+<a href="organization-main.html">
+Connect
+</a>
+<a href="index.html">
+Explore
+</a>
+<a href="index.html" >
+Messages
+</a>
+</td>
+<td align="right" style="white-space: nowrap;">
+<a href="index.html" >
+
+</a>
+<a href="index.html">
+Logout
+</a>
+
+</td>
+<tr></table>
+<br/>
+		<img class="gridimg" src="avatar/4.jpg" style="width:90%;height:150px;object-fit:cover;border-radius:30px;">
+		<div  class="gridtitle">Monica Ace</div>
+		<div  class="gridtitlemin">Digital marketer</div>
+
+<br/>
+<div class="container p-5">
+  <h3 class="mb-1">Schedule</h3>
+  
+  <div class="row mb-3">
+    <div class="col-6">
+      Day
+    </div>
+    <div class="col-3">
+      Start
+    </div>
+    <div class="col-3">
+      End
+    </div>
+  </div>
+  <div class="row mb-2 tp-day-cont">
+    <div class="col-6">
+      <span class="day-txt">Monday:</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-start-time">08:00</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-end-time">17:00</span>
+    </div>
+  </div>
+  <div class="row mb-2 tp-day-cont">
+    <div class="col-6">
+      <span class="tp-day-txt">Tuesday:</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-start-time">08:00</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-end-time">17:00</span>
+    </div>
+  </div>
+  <div class="row mb-2 tp-day-cont">
+    <div class="col-6">
+      <span class="day-txt">Wednesday:</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-start-time">08:00</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-end-time">17:00</span>
+    </div>
+  </div>
+  <div class="row mb-2 tp-day-cont">
+    <div class="col-6">
+      <span class="day-txt">Thursday:</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-start-time">08:00</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-end-time">17:00</span>
+    </div>
+  </div>
+  <div class="row mb-2 tp-day-cont">
+    <div class="col-6">
+      <span class="day-txt">Friday:</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-start-time">08:00</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-end-time">17:00</span>
+    </div>
+  </div>
+  <div class="row mb-2 tp-day-cont">
+    <div class="col-6">
+      <span class="day-txt">Saturday:</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-start-time">08:00</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-end-time">17:00</span>
+    </div>
+  </div>
+  <div class="row mb-2 tp-day-cont">
+    <div class="col-6">
+      <span class="day-txt">Sunday:</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-start-time">08:00</span>
+    </div>
+    <div class="col-3">
+      <span class="tp-end-time">17:00</span>
+    </div>
+  </div>
+</div> 
+</div>
+<script>
+$(document).ready(function(){
+  
+  $(document).on('click', '.tp-start-time', function(){
+    timePicker($(this));
+  });
+  
+  $(document).on('click', '.tp-end-time', function(){
+    startTime = $(this).closest('.tp-day-cont').find('.tp-start-time').html();
+    timePicker($(this), 5, getHour(startTime));
+  });
+});
+
+function timePicker($elem, minutesStep = 5, startHour = 0, startMinutes = 0, endHour = 23, endMinutes = 59, defaultTime)
+{
+  let currentHour = '12';
+  let currentMinutes = '00';
+  if(startHour < 0 || startHour > 23){
+    startHour = 0;
+  }
+  if (endHour < startHour || endHour > 23){
+    endHour = 23;
+  }
+  
+  if (startMinutes < 0 || startMinutes > 59){
+    startMinutes = 0;
+  }
+  if (endMinutes <= startMinutes || endMinutes > 59){
+    endMinutes = 59;
+  }
+  
+  if (minutesStep < 1 || minutesStep > 60){
+    minutesStep = 5;
+  }
+  
+  if (!defaultTime){
+    let currentTime = $elem.html();
+    if(isValidTime(currentTime)){
+      currentHour = getHour(currentTime);
+      currentMinutes = getMinutes(currentTime);
+    }
+  }
+  let modal = '<div id="tp-modal" class="modal fade" tabindex="-1">' +
+      '<div class="modal-dialog modal-sm">' +
+        '<div class="modal-content">' +
+          '<div class="modal-header"><h4>Chose Time</h4></div>' +
+          '<div class="modal-body pt-0 pl-0 pr-0 ">' +
+            '<div id="tp-time-cont">' +
+              '<div id="tp-hour-cont" class="mr-1 text-right">' +
+                '<button id="tp-h-up" class="ml-auto"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
+              '<path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>' +
+                  '</svg></button>' +
+                '<div id="tp-h-value" class="tp-value">12</div>' +
+                '<button id="tp-h-down" class="ml-auto">' +
+                  '<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
+              '<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>' +
+                  '</svg>' +
+                '</button>' +
+              '</div>' +
+              '<div id="tp-colon">:</div>' +
+              '<div id="tp-minutes-cont" class="ml-1 text-left">' +
+                '<button id="tp-m-up"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
+              '<path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>' +
+                  '</svg></button>' +
+                '<div id="tp-m-value" class="tp-value">12</div>' +
+                '<button id="tp-m-down">' +
+                  '<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
+              '<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>' +
+                  '</svg>' +
+                '</button>' +
+              '</div>' +
+            '</div>' +
+          '<div class="modal-footer">' +
+            '<button type="button" id="tp-cancel-btn" class="btn btn-secondary" data-dismiss="modal">Cancel</button>' +
+            '<button type="button" id="tp-set-btn" class="btn btn-primary">Chose</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  $('body').append(modal);
+  
+  $('#tp-h-value').html(currentHour);
+  $('#tp-m-value').html(currentMinutes);
+  
+  $('#tp-h-up').off('click').on('click', function(){
+    let val = parseInt($('#tp-h-value').html()) + 1;
+    if (val == endHour + 1){
+      $('#tp-h-value').html(('0' + startHour).substr(-2));
+    } else {
+      $('#tp-h-value').html(('0' + val).substr(-2));
+    }
+  });
+  
+  $('#tp-h-down').off('click').on('click', function(){
+    let val = parseInt($('#tp-h-value').html()) - 1;
+    if (val == startHour - 1){
+      $('#tp-h-value').html(('0' + endHour).substr(-2));
+    } else {
+      $('#tp-h-value').html(('0' + val).substr(-2));
+    }
+  });
+  
+  $('#tp-m-up').off('click').on('click', function(){
+    let val = parseInt($('#tp-m-value').html()) + minutesStep;
+    if (val >= endMinutes + 1){
+      $('#tp-m-value').html((startMinutes == 0)? '00' : ('0' + (startMinutes + minutesStep - startMinutes % minutesStep)).substr(-2));
+    } else {
+      $('#tp-m-value').html(('0' + val).substr(-2));
+    }
+  });
+  
+  $('#tp-m-down').off('click').on('click', function(){
+    let val = parseInt($('#tp-m-value').html()) - minutesStep;
+    if (val <= startMinutes - 1){
+      $('#tp-m-value').html(('0' + (endMinutes - endMinutes % minutesStep)).substr(-2));
+    } else {
+      $('#tp-m-value').html(('0' + val).substr(-2));
+    }
+  });
+  
+  $('#tp-set-btn').off('click').on('click', function(){
+    let h = $('#tp-h-value').html();
+    let m = $('#tp-m-value').html();
+    
+    $elem.html(h + ':' + m);
+    
+    if ($elem.hasClass('tp-start-time')){
+      let $endTimeElem = $elem.closest('.tp-day-cont').find('.tp-end-time');
+      if ($endTimeElem.length > 0){
+        if (compareTimes($elem.html(), $endTimeElem.html()) == 0 || compareTimes($elem.html(), $endTimeElem.html()) == 1){
+          $endTimeElem.html(newEndTime($elem.html(), minutesStep));
+        }
+      }
+    } else {
+      let $startTimeElem = $elem.closest('.tp-day-cont').find('.tp-start-time');
+      if ($startTimeElem.length > 0){
+        if (compareTimes($startTimeElem.html(), $elem.html()) == 0 || compareTimes($startTimeElem.html(), $elem.html()) == 1){
+          $elem.html(newEndTime($startTimeElem.html(), minutesStep));
+        }
+      }
+    }
+    $('#tp-modal').modal('hide');
+  });
+  
+  $('#tp-modal').modal('show');
+}
+  
+function getHour(time){
+  return time.substr(0, time.indexOf(':'));
+}
+
+function getIntHour(time){
+  return parseInt(getHour(time));
+}
+
+function getMinutes(time){
+  return time.substr(time.indexOf(':') + 1);
+}
+
+function getIntMinutes(time){
+  return parseInt(getMinutes(time));
+}
+
+function isValidTime(time){
+  let patt = /([01]?\d):([0-5]\d)/g;
+  return patt.test(time);
+}
+
+function compareTimes(time1, time2){
+  if (!isValidTime(time1) || !isValidTime(time2)) {
+    return -1;
+  }
+  if (time1 == time2){
+    return 0;
+  } else if(getIntHour(time1) > getIntHour(time2)) {
+    return 1;
+  } else if(getIntHour(time1) == getIntHour(time2)) {
+    if (getIntMinutes(time1) > getIntMinutes(time2)) {
+      return 1;
+    }
+    else {
+      return 2;
+    }
+  } else {
+    return 2;
+  }
+}
+
+function newEndTime(startTime, minutesStep){
+  if (!isValidTime(startTime)){
+    return -1;
+  }
+  
+  let hour = getIntHour(startTime);
+  let minutes = getIntMinutes(startTime);
+  
+  if (minutes + minutesStep > 59){
+    minutes = 0;
+    hour++;
+    if (hour > 23){
+      return startTime;
+    }
+  } else {
+    minutes += minutesStep;
+  }
+  
+  hour = ("0" + hour).substr(-2);
+  minutes = ("0" + minutes).substr(-2);
+  return hour + ":" + minutes;
+}
+</script>
+</body>
+</html>
